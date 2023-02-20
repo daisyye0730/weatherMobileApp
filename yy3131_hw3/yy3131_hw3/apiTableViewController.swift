@@ -93,7 +93,6 @@ class apiTableViewController: UITableViewController {
     
     var queries = ["Shanghai", "NEW%20YORK%20CITY", "Tokyo", "Mumbai", "Taipei", "Los%20Angeles", "Seattle", "Beijing", "Hong%20Kong", "Paris"]
     var ans: [Weather] = []
-    var imgs: [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -135,7 +134,6 @@ class apiTableViewController: UITableViewController {
             print(response?.suggestedFilename ?? url.lastPathComponent)
             DispatchQueue.main.async() {
                 cell.condition!.image = UIImage(data: data)
-                self.imgs.insert(UIImage(data: data)!, at: indexPath.row)
             }
         }
         return cell
@@ -190,7 +188,6 @@ class apiTableViewController: UITableViewController {
         let myRow = tableView!.indexPathForSelectedRow
 
         destVC.location = ans[myRow?.row as! Int].location.name
-        destVC.pic = imgs[myRow?.row as! Int]
         destVC.temperature = "\(ans[myRow?.row as! Int].current.tempF)°F"
         destVC.windmph = "Wind Speed: \(ans[myRow?.row as! Int].current.windMph) MPH"
         destVC.humidity = "Humidity: \(ans[myRow?.row as! Int].current.humidity)"
@@ -202,7 +199,6 @@ class apiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             ans.remove(at: indexPath.row)
-            imgs.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
@@ -220,10 +216,7 @@ class apiTableViewController: UITableViewController {
 //        condition.remove(at: sourceIndexPath.row)
 //        condition.insert(movedCondition, at:destinationIndexPath.row)
         let moved = self.ans[sourceIndexPath.row]
-        let movedImg = self.imgs[sourceIndexPath.row]
         ans.remove(at: sourceIndexPath.row)
-        imgs.remove(at: sourceIndexPath.row)
         ans.insert(moved, at: destinationIndexPath.row)
-        imgs.insert(movedImg, at: destinationIndexPath.row)
     }
 }

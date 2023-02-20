@@ -30,10 +30,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yj2-Or-V89">
-                                <rect key="frame" x="164" y="70" width="64" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhr-ag-Tn1" userLabel="PreciseLocation">
                                 <rect key="frame" x="87" y="198" width="218" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,7 +72,6 @@
                     <navigationItem key="navigationItem" id="wth-Yy-psf"/>
                     <connections>
                         <outlet property="city" destination="y5Y-St-xVW" id="Lgf-wO-GHe"/>
-                        <outlet property="condition" destination="Yj2-Or-V89" id="f8E-HX-pmt"/>
                         <outlet property="feelsLikeFah" destination="M6i-63-aB6" id="ron-fB-C8k"/>
                         <outlet property="humid" destination="8Yd-q4-SpJ" id="fFd-8q-Eij"/>
                         <outlet property="preciseLocation" destination="xhr-ag-Tn1" id="t8N-nE-q3L"/>
