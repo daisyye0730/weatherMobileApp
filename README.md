@@ -1,6 +1,4 @@
-# hw3-liveAPIdata
+# Weather iOS App
 
-
-
-## Getting started
+An iOS application that allows the display of weather from different cities.
 
