@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var uvlight: UILabel!
     @IBOutlet weak var humid: UILabel!
     @IBOutlet weak var wind: UILabel!
+    @IBOutlet weak var img: UIImageView!
     
     var location: String = ""
     var entireLocation: String = ""
@@ -24,6 +25,7 @@ class DetailViewController: UIViewController {
     var humidity: String = ""
     var feelsLikeF: String = ""
     var uv: String = ""
+    var condition: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +36,7 @@ class DetailViewController: UIViewController {
         uvlight.text = uv
         humid.text = humidity
         wind.text = windmph
+        img.image = condition
     }
     
 

@@ -194,6 +194,14 @@ class apiTableViewController: UITableViewController {
         destVC.feelsLikeF = "Feels like: \(ans[myRow?.row as! Int].current.feelslikeF)°F"
         destVC.uv = "UV: \(ans[myRow?.row as! Int].current.uv)"
         destVC.entireLocation = "\(ans[myRow?.row as! Int].location.name), \(ans[myRow?.row as! Int].location.region), \(ans[myRow?.row as! Int].location.country)"
+        let url = URL(string: "https:" + ans[myRow?.row as! Int].current.condition.icon)!
+        getImage(from: url) { data, response, error in
+            guard let data = data, error == nil else { return }
+            print(response?.suggestedFilename ?? url.lastPathComponent)
+            DispatchQueue.main.async() {
+                destVC.img.image = UIImage(data: data)
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
